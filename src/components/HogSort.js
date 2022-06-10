@@ -1,6 +1,10 @@
 const HogSort = () => {
   console.log('Hi from HogSort')
-  return null
+  return (
+    <div className='filterWrapper'>
+      <p className='smallHeader'>HogSort</p>
+    </div>
+  )
 }
 
 export default HogSort
