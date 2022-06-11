@@ -13,12 +13,14 @@ function App() {
 	const [nameSort, setNameSort] = useState(false)
 	const [weightSort, setWeightSort] = useState(false)
 
+	const handleFilterClick = () => setGreasedFilter(greasedFilter => !greasedFilter)
+	// console.log(greasedFilter)
 	return (
 		<div className="App">
 			<Nav />
-			<HogFilter />
+			<HogFilter greasedFilter={greasedFilter} handleFilterClick={handleFilterClick}/>
 			<HogSort />
-			<TileList hogs={hogs} />
+			<TileList hogs={hogs} greasedFilter={greasedFilter}/>
 		</div>
 	);
 }

@@ -1,9 +1,15 @@
 // import { useState } from 'react'
 import Tile from "./Tile"
 
-const TileList = ({ hogs }) => {
+const TileList = ({ hogs, greasedFilter }) => {
+  // Pulling greased key from each hog and seeing if it's true:
+  // const hogsToDisplay = hogs.filter(({ greased }) => greased )
+  const hogsToDisplay = hogs.filter(hog => {
+    return greasedFilter ? hog.greased : true
+  })
   // debugger
-  const buildTiles = hogs.map(({ name, image, ...details }) => (
+
+  const buildTiles = hogsToDisplay.map(({ name, image, ...details }) => (
     <Tile key={name} name={name} image={image} details={details}/>
     )
   )
