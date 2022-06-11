@@ -1,23 +1,31 @@
+// import { useState } from 'react'
 import Tile from "./Tile"
 
 const TileList = ({ hogs }) => {
   // debugger
-  const buildTiles = hogs.map(hog => {
-      return <Tile
-        key={hog.name}
-        hog={hog} 
-      />
-    }
+  const buildTiles = hogs.map(({ name, image, ...details }) => (
+    <Tile key={name} name={name} image={image} details={details}/>
+    )
   )
+  
+  return <ul className='ui grid container'>{buildTiles}</ul>
+  }
+  
+  export default TileList
+  
+  // const sendDetails = showDetails ? details(hog) : null
 
-  console.log('Hi from TileList')
-  return (
-    <>
-      <ul className='ui grid container'>
-        {buildTiles}
-      </ul>
-    </>
-  )
-}
-
-export default TileList
+  // const details = ({
+  //   specialty,
+  //   weight,
+  //   greased,
+  //   'highest medal achieved': highestMedalAchieved
+  // }) => {
+  //   debugger
+  //   return {
+  //   'specialty': specialty,
+  //   'weight': weight,
+  //   'greased': greased,
+  //   'highestMedalAchieved': highestMedalAchieved
+  //   }
+  // }
