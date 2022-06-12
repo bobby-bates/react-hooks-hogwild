@@ -18,6 +18,7 @@ function App() {
 	const handleSelectedChange = e => {
 		switch (e.target.value) {
 			case 'None': {
+				// Resets all sort state
 				setNameSort(()=>false)
 				setWeightSort(()=>false)
 				break;
@@ -34,7 +35,6 @@ function App() {
 			}
 			default:
 				console.log('Sort state error!')
-				break;
 			}
 		}
 
